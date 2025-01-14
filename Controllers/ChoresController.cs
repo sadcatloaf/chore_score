@@ -1,5 +1,6 @@
 
 using chores_score.Models;
+using chores_score.Services;
 
 namespace chore_score.Controllers;
 
@@ -8,6 +9,13 @@ namespace chore_score.Controllers;
 
 public class ChoresController : ControllerBase
 {
+    public ChoresController(ChoresService choresService)
+    {
+        _choresService = choresService;
+    }
+
+    private readonly ChoresService _choresService;
+
     [HttpGet("test")]
     public string Test()
     {
@@ -20,7 +28,7 @@ public class ChoresController : ControllerBase
     {
         try
         {
-            List<Chore> chores = [];
+            List<Chore> chores = _choresService.GetAllChores();
             return Ok(chores);
         }
         catch (Exception error)
