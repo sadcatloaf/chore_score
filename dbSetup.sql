@@ -1,3 +1,4 @@
+-- Active: 1736871713169@@127.0.0.1@3306@rational_mermaid_e918_db
 CREATE TABLE IF NOT EXISTS accounts(
   id VARCHAR(255) NOT NULL primary key COMMENT 'primary key',
   createdAt DATETIME DEFAULT CURRENT_TIMESTAMP COMMENT 'Time Created',
@@ -12,9 +13,9 @@ CREATE TABLE chores(
   chore_name VARCHAR(255) NOT NULL,
   description VARCHAR(255),
   assigned VARCHAR(255),
-  priority INTEGER CHECK(priority >= 1 priority <=5),
+  priority INTEGER,
   due_date DATE,
-  time_estimated INTEGER
+  time_estimated INTEGER,
   isComplete BOOLEAN DEFAULT false
   -- ADD YOUR OWN ADDITIONAL PROPERTIES! TRY OUT LOTS OF DIFFERENT DATA TYPES!
 );
