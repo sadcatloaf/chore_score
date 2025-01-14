@@ -1,4 +1,4 @@
-namespace chores_api.Models;
+namespace chores_score.Models;
 
 public class Chore
 {
